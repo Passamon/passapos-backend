@@ -4,6 +4,29 @@ Clean and lush point of sale program
 ![login-page](https://i.ibb.co/hB4LTr5/Web-1920-3.png)
 ![operating-page](https://i.ibb.co/Ttg2VSx/Web-1920-2.png)
 
+# Installation
+Prerequisite:
+- Python 3+
+- Django 3+
+
+1 Let's clone the project!
+```
+git clone https://github.com/Passamon/passapos-backend
+```
+
+2 Change Directory to passapos-backend
+```
+cd passapos-backend
+```
+
+3 Run server (HTTP Server)
+```
+python manage.py runserver
+```
+
+4 Let's do some query to http://127.0.0.1:8000/{API_ENDPOINT}
+
+
 # API Docs
 ## endpoint api/product/
 HTTP GET: ดึงข้อมูลสินค้า
