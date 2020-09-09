@@ -14,7 +14,7 @@ Prerequisite:
 git clone https://github.com/Passamon/passapos-backend
 ```
 
-2 Change Directory to passapos-backend
+2 Change directory to passapos-backend
 ```
 cd passapos-backend
 ```
