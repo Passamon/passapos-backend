@@ -5,3 +5,153 @@ Clean and lush point of sale program
 ![operating-page](https://i.ibb.co/Ttg2VSx/Web-1920-2.png)
 
 # API Docs
+## endpoint api/product/
+HTTP GET: ดึงข้อมูลสินค้า
+```JSON 
+INPUT:
+{
+    "token": "User token",
+    "product_id": 123 <-- (Optional หากใส่จะดึง product เฉพาะ product_id ที่ระบุ)
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": [
+        {
+            "product_id": 123,
+            "product_name": "abc",
+            "product_price": 123.00,
+            "product_img": "abc.png"
+        },
+        ...
+        ...
+    ]
+}
+```
+HTTP POST: เพิ่มสินค้า
+```JSON 
+INPUT:
+{
+    "token": "User token",
+    "product_name": "abc",
+    "product_price": 123.00,
+    "product_img": "abc.png"
+}
+```
+```JSON
+OUTPUT:
+{
+    "data": "201"
+}
+```
+
+HTTP PUT: แก้ไขสินค้า
+```JSON
+INPUT: 
+{
+    "token": "User token",
+    "product_id": "id ของ Product ที่จะแก้ไข",
+    "product_name": "abc",
+    "product_price": 123.00,
+    "product_img": "abc.png"
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": "200"
+}
+```
+HTTP DELETE: ลบสินค้า
+```JSON 
+INPUT:
+{
+    "token": "User Token",
+    "product_id": 123
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": "200"
+}
+```
+
+## api/user/
+HTTP GET: ดึง Username 
+```JSON 
+INPUT:
+{
+    "token": "",
+    "user_id": ""
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": {
+        "user_username": "",
+        "user_password": ""
+    }
+}
+```
+
+HTTP POST: เข้าสู่ระบบ (Login)
+```JSON 
+INPUT:
+{
+    "user_username": "",
+    "user_password": ""
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": "token"
+}
+```
+HTTP PUT: เปลี่ยน username และ 
+```JSON 
+INPUT:
+{
+    "token": "",
+    "user_id": "",
+    "username": "",
+    "password": ""
+}
+```
+```JSON
+OUTPUT:
+{
+    "data": "token"
+}
+```
+
+## api/payment/
+HTTP GET: รายงานยอดขาย
+```JSON 
+OUTPUT:
+{
+    "data": [
+        ข้อมูลทุก Transaction
+    ]
+}
+```
+
+HTTP POST: ชำระเงิน
+```JSON
+INPUT:
+{
+    "token": "User token",
+    "user_id": "",
+    "product_id: "",
+    "transaction_amount": ""
+}
+```
+```JSON 
+OUTPUT:
+{
+    "data": "201"
+}
+```
