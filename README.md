@@ -28,6 +28,7 @@ python manage.py runserver
 
 
 # API Docs
+สามารถ generate user token ได้จาก endpoint api/user/ ด้วย POST method
 ## endpoint api/product/
 HTTP GET: ดึงข้อมูลสินค้า
 ```JSON 
@@ -120,12 +121,14 @@ OUTPUT:
 }
 ```
 
-HTTP POST: เข้าสู่ระบบ (Login)
+HTTP POST: เข้าสู่ระบบ (Login)<br>
+Admin Default username: admin<br>
+Admin Default password: sha512(123456)
 ```JSON 
 INPUT:
 {
     "user_username": "",
-    "user_password": ""
+    "user_password": "MUST BE SHA512 ENCRYPTED STRING"
 }
 ```
 ```JSON 
